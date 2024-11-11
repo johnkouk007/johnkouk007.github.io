@@ -251,59 +251,65 @@
   <div class="testimonial-carousel">
     <!-- Testimonial Item 1 -->
     <div class="testimonial-item">
-      <div class="testimonial-header">
-        <img src="https://via.placeholder.com/80" alt="Customer 1">
-        <div class="testimonial-info">
-          <p><strong>John Doe</strong></p>
-          <p><em>Minecraft Server Admin</em></p>
+      <div class="testimonial-box">
+        <div class="testimonial-header">
+          <img src="https://via.placeholder.com/80" alt="Customer 1">
+          <div class="testimonial-info">
+            <p><strong>John Doe</strong></p>
+            <p><em>Minecraft Server Admin</em></p>
+          </div>
         </div>
+        <div class="testimonial-rating">
+          <span class="star">&#9733;</span>
+          <span class="star">&#9733;</span>
+          <span class="star">&#9733;</span>
+          <span class="star">&#9733;</span>
+          <span class="star">&#9734;</span>
+        </div>
+        <p class="testimonial-text">"DVH Hosting has been amazing for my Minecraft server. The performance is top-notch, and the support team is incredibly responsive! My server never lags, and the customer service is available 24/7."</p>
       </div>
-      <div class="testimonial-rating">
-        <span class="star">&#9733;</span>
-        <span class="star">&#9733;</span>
-        <span class="star">&#9733;</span>
-        <span class="star">&#9733;</span>
-        <span class="star">&#9734;</span>
-      </div>
-      <p class="testimonial-text">"DVH Hosting has been amazing for my Minecraft server. The performance is top-notch, and the support team is incredibly responsive! My server never lags, and the customer service is available 24/7."</p>
     </div>
     
     <!-- Testimonial Item 2 -->
     <div class="testimonial-item">
-      <div class="testimonial-header">
-        <img src="https://via.placeholder.com/80" alt="Customer 2">
-        <div class="testimonial-info">
-          <p><strong>Jane Smith</strong></p>
-          <p><em>Game Developer</em></p>
+      <div class="testimonial-box">
+        <div class="testimonial-header">
+          <img src="https://via.placeholder.com/80" alt="Customer 2">
+          <div class="testimonial-info">
+            <p><strong>Jane Smith</strong></p>
+            <p><em>Game Developer</em></p>
+          </div>
         </div>
+        <div class="testimonial-rating">
+          <span class="star">&#9733;</span>
+          <span class="star">&#9733;</span>
+          <span class="star">&#9733;</span>
+          <span class="star">&#9733;</span>
+          <span class="star">&#9733;</span>
+        </div>
+        <p class="testimonial-text">"I’ve used other hosting providers before, but none compare to DVH Hosting. The speed and reliability are unmatched! Setting up my dedicated server was a breeze, and the pricing is reasonable for the quality."</p>
       </div>
-      <div class="testimonial-rating">
-        <span class="star">&#9733;</span>
-        <span class="star">&#9733;</span>
-        <span class="star">&#9733;</span>
-        <span class="star">&#9733;</span>
-        <span class="star">&#9733;</span>
-      </div>
-      <p class="testimonial-text">"I’ve used other hosting providers before, but none compare to DVH Hosting. The speed and reliability are unmatched! Setting up my dedicated server was a breeze, and the pricing is reasonable for the quality."</p>
     </div>
     
     <!-- Testimonial Item 3 -->
     <div class="testimonial-item">
-      <div class="testimonial-header">
-        <img src="https://via.placeholder.com/80" alt="Customer 3">
-        <div class="testimonial-info">
-          <p><strong>Sam Lee</strong></p>
-          <p><em>Website Owner</em></p>
+      <div class="testimonial-box">
+        <div class="testimonial-header">
+          <img src="https://via.placeholder.com/80" alt="Customer 3">
+          <div class="testimonial-info">
+            <p><strong>Sam Lee</strong></p>
+            <p><em>Website Owner</em></p>
+          </div>
         </div>
+        <div class="testimonial-rating">
+          <span class="star">&#9733;</span>
+          <span class="star">&#9733;</span>
+          <span class="star">&#9733;</span>
+          <span class="star">&#9733;</span>
+          <span class="star">&#9734;</span>
+        </div>
+        <p class="testimonial-text">"As a business owner, uptime is everything. DVH Hosting has given me peace of mind with their excellent uptime and support. I can always rely on them to keep my website running smoothly!"</p>
       </div>
-      <div class="testimonial-rating">
-        <span class="star">&#9733;</span>
-        <span class="star">&#9733;</span>
-        <span class="star">&#9733;</span>
-        <span class="star">&#9733;</span>
-        <span class="star">&#9734;</span>
-      </div>
-      <p class="testimonial-text">"As a business owner, uptime is everything. DVH Hosting has given me peace of mind with their excellent uptime and support. I can always rely on them to keep my website running smoothly!"</p>
     </div>
     
     <!-- Testimonial Navigation Buttons -->
@@ -339,44 +345,54 @@
     display: none;
     text-align: left;
     padding: 20px;
-    background-color: #2c2c2c;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease;
   }
 
-  .testimonial-item .testimonial-header {
+  .testimonial-box {
+    background: linear-gradient(135deg, #f5a623, #f57c00);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .testimonial-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  }
+
+  .testimonial-header {
     display: flex;
     align-items: center;
+    margin-bottom: 20px;
   }
 
-  .testimonial-item .testimonial-header img {
+  .testimonial-header img {
     border-radius: 50%;
     width: 80px;
     height: 80px;
     margin-right: 20px;
   }
 
-  .testimonial-item .testimonial-info p {
+  .testimonial-info p {
     margin: 0;
   }
 
-  .testimonial-item .testimonial-info p strong {
+  .testimonial-info p strong {
     font-size: 18px;
   }
 
-  .testimonial-item .testimonial-rating {
-    margin: 15px 0;
+  .testimonial-rating {
+    margin: 10px 0;
   }
 
   .star {
     font-size: 18px;
-    color: #f5a623;
+    color: #fff;
   }
 
-  .testimonial-item .testimonial-text {
+  .testimonial-text {
     font-size: 16px;
-    color: #b0b0b0;
+    color: #f2f2f2;
     line-height: 1.6;
   }
 
@@ -433,6 +449,7 @@
   });
 </script>
 
+  
   <!-- Footer Section -->
   <footer>
     <p>&copy; 2024 DVH Hosting. All Rights Reserved.</p>
