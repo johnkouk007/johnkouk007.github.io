@@ -18,6 +18,7 @@
       background-color: #141414;
       color: #fff;
       overflow-x: hidden;
+      height: 100vh;
     }
 
     header {
@@ -25,6 +26,7 @@
       padding: 20px 0;
       text-align: center;
       animation: fadeIn 2s ease-in-out;
+      z-index: 999;
     }
 
     header h1 {
@@ -51,7 +53,12 @@
       padding: 80px 20px;
       text-align: center;
       color: #fff;
+      height: 100vh;
       animation: fadeIn 3s ease-in-out;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
     }
 
     .hero-section h2 {
@@ -119,6 +126,22 @@
         transform: translateY(0);
       }
     }
+
+    /* Additional styling to ensure responsiveness */
+    @media (max-width: 768px) {
+      .services {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-section h2 {
+        font-size: 36px;
+      }
+
+      .hero-section p {
+        font-size: 18px;
+      }
+    }
+
   </style>
 </head>
 <body>
