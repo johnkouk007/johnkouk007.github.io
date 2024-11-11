@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>DVH Hosting</title>
   
-  <!-- Favicon (Logo in browser tab) -->
+  <!-- Favicon -->
   <link rel="icon" href="https://cdn.discordapp.com/attachments/1302235245441191978/1305561098896015421/Screenshot_20241031-152812_Google.jpg?ex=67337a06&is=67322886&hm=d8c840bf590c0541e9966617189d4f182f5d985a645a2a3a547d2172c7dd547b&" type="image/x-icon">
 
   <style>
@@ -16,59 +16,56 @@
       font-family: 'Arial', sans-serif;
       background-color: #141414;
       color: #fff;
+      scroll-behavior: smooth;
     }
     a {
       color: inherit;
       text-decoration: none;
     }
 
-    /* Header Section */
+    /* Sticky Navigation */
     header {
+      position: sticky;
+      top: 0;
       background-color: #000;
-      padding: 20px 20px;
+      padding: 20px 0;
       text-align: center;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      z-index: 1000;
     }
 
     /* Title and Logo Styling */
     header a {
       display: flex;
       align-items: center;
+      justify-content: center;
       text-decoration: none;
       color: inherit;
     }
     header img {
-      height: 50px; /* Adjust logo size */
-      margin-right: 20px; /* Space between logo and text */
+      height: 50px;
+      margin-right: 20px;
     }
     header h1 {
       font-size: 48px;
-      color: #00bcd4; /* Aqua Blue */
+      color: #00bcd4;
       margin: 0;
     }
 
-    /* Navigation Buttons */
-    .header-buttons {
-      display: flex;
-      justify-content: center;
+    /* Navigation Links */
+    nav {
+      margin-top: 15px;
     }
-    .header-buttons button {
-      background-color: #00bcd4;
+    nav a {
+      margin: 0 20px;
+      font-size: 20px;
       color: #fff;
-      padding: 10px 20px;
-      font-size: 16px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      margin: 0 10px;
       text-transform: uppercase;
-      transition: background-color 0.3s ease;
+      letter-spacing: 1px;
+      transition: color 0.3s ease;
     }
-    .header-buttons button:hover {
-      background-color: #008c8c;
+    nav a:hover {
+      color: #00bcd4;
     }
 
     /* Hero Section */
@@ -128,7 +125,7 @@
       transform: scale(1.05);
     }
     .service-box h3 {
-      color: #00bcd4; /* Aqua Blue */
+      color: #00bcd4;
       font-size: 28px;
       margin: 20px 0;
     }
@@ -171,7 +168,7 @@
     }
     .testimonial-rating .star {
       font-size: 18px;
-      color: #00bcd4; /* Aqua Blue */
+      color: #00bcd4;
     }
     .testimonial-text {
       color: #f2f2f2;
@@ -187,7 +184,7 @@
       color: #fff;
     }
     footer a {
-      color: #00bcd4; /* Aqua Blue */
+      color: #00bcd4;
       text-decoration: none;
     }
     footer p {
@@ -200,27 +197,57 @@
       transition: color 0.3s ease;
     }
     footer .social-links a:hover {
-      color: #00bcd4; /* Aqua Blue */
+      color: #00bcd4;
+    }
+
+    /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.4);
+      padding-top: 60px;
+    }
+    .modal-content {
+      background-color: #222;
+      margin: 5% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+      max-width: 600px;
+    }
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+    .close:hover,
+    .close:focus {
+      color: #000;
+      text-decoration: none;
+      cursor: pointer;
     }
   </style>
 </head>
 <body>
 
-  <!-- Header Section with Logo, Title, and Buttons -->
+  <!-- Header Section with Logo and Navigation -->
   <header>
     <a href="/">
       <img src="https://cdn.discordapp.com/attachments/1302235245441191978/1305561098896015421/Screenshot_20241031-152812_Google.jpg?ex=67337a06&is=67322886&hm=d8c840bf590c0541e9966617189d4f182f5d985a645a2a3a547d2172c7dd547b&" alt="DVH Hosting">
       <h1>DVH Hosting</h1>
     </a>
-    <!-- Navigation Buttons to the Right -->
-    <div class="header-buttons">
-      <button>Home</button>
-      <button>Services</button>
-      <button>Pricing</button>
-      <button>About</button>
-      <button>Contact</button>
-      <button>Support</button>
-    </div>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#services">Services</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#contact">Contact</a>
+    </nav>
   </header>
 
   <!-- Hero Section -->
@@ -245,37 +272,37 @@
     </div>
     <div class="service-box">
       <h3>Ultimate Plan</h3>
-      <p>For large-scale servers. Host up to 100+ players with full customization, priority support, and high uptime.</p>
+      <p>For large gaming communities. Host up to 200 players with the highest performance and 24/7 support.</p>
       <button class="btn-primary">Choose Plan</button>
     </div>
   </section>
 
   <!-- Testimonials Section -->
   <section id="testimonials" class="testimonial-section">
-    <h2>What Our Customers Say</h2>
+    <h2>What Our Clients Say</h2>
     <div class="testimonial-item">
-      <img src="https://via.placeholder.com/80" alt="Customer">
+      <img src="https://via.placeholder.com/80" alt="Client 1">
       <h3>John Doe</h3>
       <div class="testimonial-rating">
-        <span class="star">&#9733;</span>
-        <span class="star">&#9733;</span>
-        <span class="star">&#9733;</span>
-        <span class="star">&#9733;</span>
-        <span class="star">&#9733;</span>
+        <span class="star">★</span>
+        <span class="star">★</span>
+        <span class="star">★</span>
+        <span class="star">★</span>
+        <span class="star">★</span>
       </div>
-      <p class="testimonial-text">"DVH Hosting has been amazing. The performance is top-notch, and their support team is very responsive!"</p>
+      <p class="testimonial-text">DVH Hosting has been amazing! The server is fast and reliable. I can always count on them for great service.</p>
     </div>
     <div class="testimonial-item">
-      <img src="https://via.placeholder.com/80" alt="Customer">
+      <img src="https://via.placeholder.com/80" alt="Client 2">
       <h3>Jane Smith</h3>
       <div class="testimonial-rating">
-        <span class="star">&#9733;</span>
-        <span class="star">&#9733;</span>
-        <span class="star">&#9733;</span>
-        <span class="star">&#9733;</span>
-        <span class="star">&#9733;</span>
+        <span class="star">★</span>
+        <span class="star">★</span>
+        <span class="star">★</span>
+        <span class="star">★</span>
+        <span class="star">★</span>
       </div>
-      <p class="testimonial-text">"Incredible experience. My server has never been more stable, and the prices are unbeatable!"</p>
+      <p class="testimonial-text">I love the customer support. They are always available and help me with any issues I face. Highly recommend!</p>
     </div>
   </section>
 
@@ -283,11 +310,46 @@
   <footer>
     <p>&copy; 2024 DVH Hosting. All rights reserved.</p>
     <div class="social-links">
-      <a href="#">Facebook</a>
-      <a href="#">Twitter</a>
-      <a href="#">Instagram</a>
+      <a href="#" target="_blank">Facebook</a>
+      <a href="#" target="_blank">Twitter</a>
+      <a href="#" target="_blank">Instagram</a>
     </div>
   </footer>
+
+  <!-- Modal for Contact Form -->
+  <div id="contact-modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Contact Us</h2>
+      <form>
+        <input type="text" placeholder="Your Name" required><br>
+        <input type="email" placeholder="Your Email" required><br>
+        <textarea placeholder="Your Message" required></textarea><br>
+        <button type="submit" class="btn-primary">Send Message</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script>
+    // Modal functionality
+    const modal = document.getElementById('contact-modal');
+    const closeBtn = document.querySelector('.close');
+
+    document.querySelector('.btn-primary').addEventListener('click', () => {
+      modal.style.display = 'block';
+    });
+
+    closeBtn.addEventListener('click', () => {
+      modal.style.display = 'none';
+    });
+
+    window.onclick = function(event) {
+      if (event.target === modal) {
+        modal.style.display = 'none';
+      }
+    };
+  </script>
 
 </body>
 </html>
