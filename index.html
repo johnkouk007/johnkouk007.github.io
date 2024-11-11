@@ -243,24 +243,195 @@
     <p>With a focus on customer satisfaction and cutting-edge infrastructure, we ensure that your hosting experience is as smooth and hassle-free as possible. We host thousands of game servers for a wide variety of gaming communities, ensuring their needs are met at every level.</p>
   </section>
 
-  <!-- Testimonials Section -->
-  <section id="testimonials" class="testimonial-section">
-    <h2>What Our Customers Say</h2>
-    <div class="testimonial">
-      <img src="https://via.placeholder.com/80" alt="Customer 1">
-      <div>
-        <p>"DVH Hosting has been amazing for my Minecraft server. The performance is top-notch, and the support team is incredibly responsive!"</p>
-        <p><strong>- John Doe, Minecraft Server Admin</strong></p>
+<!-- Testimonials Section -->
+<section id="testimonials" class="testimonial-section">
+  <h2>What Our Customers Say</h2>
+  
+  <!-- Testimonial Carousel -->
+  <div class="testimonial-carousel">
+    <!-- Testimonial Item 1 -->
+    <div class="testimonial-item">
+      <div class="testimonial-header">
+        <img src="https://via.placeholder.com/80" alt="Customer 1">
+        <div class="testimonial-info">
+          <p><strong>John Doe</strong></p>
+          <p><em>Minecraft Server Admin</em></p>
+        </div>
       </div>
-    </div>
-    <div class="testimonial">
-      <img src="https://via.placeholder.com/80" alt="Customer 2">
-      <div>
-        <p>"I’ve used other hosting providers before, but none compare to DVH Hosting. The speed and reliability are unmatched!"</p>
-        <p><strong>- Jane Smith, Game Developer</strong></p>
+      <div class="testimonial-rating">
+        <span class="star">&#9733;</span>
+        <span class="star">&#9733;</span>
+        <span class="star">&#9733;</span>
+        <span class="star">&#9733;</span>
+        <span class="star">&#9734;</span>
       </div>
+      <p class="testimonial-text">"DVH Hosting has been amazing for my Minecraft server. The performance is top-notch, and the support team is incredibly responsive! My server never lags, and the customer service is available 24/7."</p>
     </div>
-  </section>
+    
+    <!-- Testimonial Item 2 -->
+    <div class="testimonial-item">
+      <div class="testimonial-header">
+        <img src="https://via.placeholder.com/80" alt="Customer 2">
+        <div class="testimonial-info">
+          <p><strong>Jane Smith</strong></p>
+          <p><em>Game Developer</em></p>
+        </div>
+      </div>
+      <div class="testimonial-rating">
+        <span class="star">&#9733;</span>
+        <span class="star">&#9733;</span>
+        <span class="star">&#9733;</span>
+        <span class="star">&#9733;</span>
+        <span class="star">&#9733;</span>
+      </div>
+      <p class="testimonial-text">"I’ve used other hosting providers before, but none compare to DVH Hosting. The speed and reliability are unmatched! Setting up my dedicated server was a breeze, and the pricing is reasonable for the quality."</p>
+    </div>
+    
+    <!-- Testimonial Item 3 -->
+    <div class="testimonial-item">
+      <div class="testimonial-header">
+        <img src="https://via.placeholder.com/80" alt="Customer 3">
+        <div class="testimonial-info">
+          <p><strong>Sam Lee</strong></p>
+          <p><em>Website Owner</em></p>
+        </div>
+      </div>
+      <div class="testimonial-rating">
+        <span class="star">&#9733;</span>
+        <span class="star">&#9733;</span>
+        <span class="star">&#9733;</span>
+        <span class="star">&#9733;</span>
+        <span class="star">&#9734;</span>
+      </div>
+      <p class="testimonial-text">"As a business owner, uptime is everything. DVH Hosting has given me peace of mind with their excellent uptime and support. I can always rely on them to keep my website running smoothly!"</p>
+    </div>
+    
+    <!-- Testimonial Navigation Buttons -->
+    <div class="testimonial-nav">
+      <button class="prev">&#10094;</button>
+      <button class="next">&#10095;</button>
+    </div>
+  </div>
+</section>
+
+<!-- Styling for the testimonials section -->
+<style>
+  .testimonial-section {
+    background-color: #141414;
+    padding: 60px 20px;
+    text-align: center;
+    color: #fff;
+  }
+
+  .testimonial-section h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+
+  .testimonial-carousel {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+
+  .testimonial-item {
+    display: none;
+    text-align: left;
+    padding: 20px;
+    background-color: #2c2c2c;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+  }
+
+  .testimonial-item .testimonial-header {
+    display: flex;
+    align-items: center;
+  }
+
+  .testimonial-item .testimonial-header img {
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    margin-right: 20px;
+  }
+
+  .testimonial-item .testimonial-info p {
+    margin: 0;
+  }
+
+  .testimonial-item .testimonial-info p strong {
+    font-size: 18px;
+  }
+
+  .testimonial-item .testimonial-rating {
+    margin: 15px 0;
+  }
+
+  .star {
+    font-size: 18px;
+    color: #f5a623;
+  }
+
+  .testimonial-item .testimonial-text {
+    font-size: 16px;
+    color: #b0b0b0;
+    line-height: 1.6;
+  }
+
+  .testimonial-nav {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+
+  .testimonial-nav button {
+    background-color: #f5a623;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+  }
+
+  .testimonial-nav button:hover {
+    background-color: #e59a18;
+  }
+
+  /* Show the first testimonial by default */
+  .testimonial-item:first-child {
+    display: block;
+  }
+</style>
+
+<!-- JavaScript for carousel functionality -->
+<script>
+  let currentIndex = 0;
+  const testimonials = document.querySelectorAll('.testimonial-item');
+  const prevButton = document.querySelector('.prev');
+  const nextButton = document.querySelector('.next');
+
+  function showTestimonial(index) {
+    testimonials.forEach((testimonial, i) => {
+      testimonial.style.display = 'none'; // Hide all testimonials
+      if (i === index) {
+        testimonial.style.display = 'block'; // Show the selected testimonial
+      }
+    });
+  }
+
+  prevButton.addEventListener('click', () => {
+    currentIndex = (currentIndex === 0) ? testimonials.length - 1 : currentIndex - 1;
+    showTestimonial(currentIndex);
+  });
+
+  nextButton.addEventListener('click', () => {
+    currentIndex = (currentIndex === testimonials.length - 1) ? 0 : currentIndex + 1;
+    showTestimonial(currentIndex);
+  });
+</script>
 
   <!-- Footer Section -->
   <footer>
