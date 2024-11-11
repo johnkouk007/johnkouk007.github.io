@@ -28,6 +28,9 @@
       padding: 20px 0;
       text-align: center;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
 
     /* Title and Logo Styling */
@@ -36,7 +39,6 @@
       align-items: center;
       text-decoration: none;
       color: inherit;
-      justify-content: center;
     }
     header img {
       height: 50px; /* Adjust logo size */
@@ -46,6 +48,27 @@
       font-size: 48px;
       color: #00bcd4; /* Aqua Blue */
       margin: 0;
+    }
+
+    /* Buttons - Left and Right */
+    .header-buttons {
+      display: flex;
+      align-items: center;
+    }
+    .header-buttons button {
+      background-color: #00bcd4;
+      color: #fff;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin: 0 10px;
+      text-transform: uppercase;
+      transition: background-color 0.3s ease;
+    }
+    .header-buttons button:hover {
+      background-color: #008c8c;
     }
 
     nav {
@@ -198,18 +221,16 @@
 </head>
 <body>
 
-  <!-- Header Section with Logo and Title as Link -->
+  <!-- Header Section with Logo, Title, and Buttons -->
   <header>
     <a href="/">
       <img src="https://cdn.discordapp.com/attachments/1302235245441191978/1305561098896015421/Screenshot_20241031-152812_Google.jpg?ex=67337a06&is=67322886&hm=d8c840bf590c0541e9966617189d4f182f5d985a645a2a3a547d2172c7dd547b&" alt="DVH Hosting">
       <h1>DVH Hosting</h1>
     </a>
-    <nav>
-      <a href="#">Home</a>
-      <a href="#services">Services</a>
-      <a href="#testimonials">Testimonials</a>
-      <a href="#contact">Contact</a>
-    </nav>
+    <div class="header-buttons">
+      <button>Left Button</button>
+      <button>Right Button</button>
+    </div>
   </header>
 
   <!-- Hero Section -->
@@ -220,51 +241,51 @@
   </section>
 
   <!-- Services Section -->
-  <section id="services" class="services">
-    <h2>Our Hosting Plans</h2>
+  <section class="services">
+    <h2>Our Services</h2>
     <div class="service-box">
-      <h3>Basic Plan</h3>
-      <p>Perfect for small gaming servers with up to 10 players. Enjoy seamless gameplay with our fast servers.</p>
-      <button class="btn-primary">Choose Plan</button>
+      <h3>Fast Servers</h3>
+      <p>Our servers are designed for maximum performance with minimal downtime.</p>
+      <button class="btn-primary">Learn More</button>
     </div>
     <div class="service-box">
-      <h3>Advanced Plan</h3>
-      <p>For medium-sized servers. Host up to 50 players with improved performance and premium support.</p>
-      <button class="btn-primary">Choose Plan</button>
+      <h3>24/7 Support</h3>
+      <p>Get help whenever you need it with our around-the-clock customer support.</p>
+      <button class="btn-primary">Learn More</button>
     </div>
     <div class="service-box">
-      <h3>Ultimate Plan</h3>
-      <p>For large-scale servers. Host up to 100+ players with full customization, priority support, and high uptime.</p>
-      <button class="btn-primary">Choose Plan</button>
+      <h3>Security</h3>
+      <p>We offer state-of-the-art security features to keep your data safe and secure.</p>
+      <button class="btn-primary">Learn More</button>
     </div>
   </section>
 
   <!-- Testimonials Section -->
-  <section id="testimonials" class="testimonial-section">
-    <h2>What Our Customers Say</h2>
+  <section class="testimonial-section">
+    <h2>What Our Clients Say</h2>
     <div class="testimonial-item">
-      <img src="https://via.placeholder.com/80" alt="Customer">
+      <img src="https://via.placeholder.com/80" alt="Client 1">
       <h3>John Doe</h3>
       <div class="testimonial-rating">
-        <span class="star">&#9733;</span>
-        <span class="star">&#9733;</span>
-        <span class="star">&#9733;</span>
-        <span class="star">&#9733;</span>
-        <span class="star">&#9734;</span>
+        <span class="star">★</span>
+        <span class="star">★</span>
+        <span class="star">★</span>
+        <span class="star">★</span>
+        <span class="star">☆</span>
       </div>
-      <p class="testimonial-text">"DVH Hosting has been amazing for my Minecraft server. The performance is outstanding!"</p>
+      <p class="testimonial-text">"DVH Hosting has been a game-changer for my server. It’s fast, reliable, and has amazing support!"</p>
     </div>
     <div class="testimonial-item">
-      <img src="https://via.placeholder.com/80" alt="Customer">
+      <img src="https://via.placeholder.com/80" alt="Client 2">
       <h3>Jane Smith</h3>
       <div class="testimonial-rating">
-        <span class="star">&#9733;</span>
-        <span class="star">&#9733;</span>
-        <span class="star">&#9733;</span>
-        <span class="star">&#9733;</span>
-        <span class="star">&#9733;</span>
+        <span class="star">★</span>
+        <span class="star">★</span>
+        <span class="star">★</span>
+        <span class="star">★</span>
+        <span class="star">★</span>
       </div>
-      <p class="testimonial-text">"The customer support is top-notch. I recommend DVH Hosting to all my friends!"</p>
+      <p class="testimonial-text">"I’ve tried many hosting services, but DVH is by far the best in terms of speed and customer service."</p>
     </div>
   </section>
 
