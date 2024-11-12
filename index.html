@@ -6,7 +6,6 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>DVH Hosting - Reliable Game Hosting Solutions</title>
   
-  <!-- Favicon (Logo in browser tab) -->
   <link rel="icon" href="https://cdn.discordapp.com/attachments/1302235245441191978/1305561098896015421/Screenshot_20241031-152812_Google.jpg?ex=67337a06&is=67322886&hm=d8c840bf590c0541e9966617189d4f182f5d985a645a2a3a547d2172c7dd547b&" type="image/x-icon">
 
   <style>
@@ -16,6 +15,7 @@
       font-family: 'Arial', sans-serif;
       background-color: #141414;
       color: #fff;
+      padding-top: 0;
     }
     a {
       color: inherit;
@@ -50,7 +50,7 @@
       color: white;
       position: relative;
       z-index: 2;
-      height: 350px;
+      transition: top 0.3s ease-in-out;
     }
 
     /* Title and Logo Styling */
@@ -227,7 +227,7 @@
   </div>
 
   <!-- Header Section with Logo, Title, and Buttons -->
-  <header>
+  <header id="header">
     <a href="/">
       <img src="https://cdn.discordapp.com/attachments/1302235245441191978/1305561098896015421/Screenshot_20241031-152812_Google.jpg?ex=67337a06&is=67322886&hm=d8c840bf590c0541e9966617189d4f182f5d985a645a2a3a547d2172c7dd547b&" alt="DVH Hosting">
       <h1>DVH Hosting</h1>
@@ -250,7 +250,7 @@
     <!-- FAQ Button -->
     <div class="button-container">
       <a href="faq.html">
-        <button class="faq-button">Frequently Asked Questions</button>
+        <button class="faq-button">FAQ</button>
       </a>
     </div>
   </section>
@@ -259,7 +259,7 @@
   <section class="testimonials">
     <h3>What Our Clients Say</h3>
     <div class="testimonial">
-      <p>"DVH Hosting is amazing! Their uptime is perfect, and the support team is always ready to assist. Couldn’t be happier with the service!"</p>
+      <p>"DVH Hosting has been an absolute game changer for our community. The performance is unbeatable!"</p>
       <h4>- John D., Server Owner</h4>
     </div>
     <div class="testimonial">
@@ -269,28 +269,6 @@
     <div class="testimonial">
       <p>"Great value for the price. I’ve been hosting my game servers with them for over a year now, and I’ve had zero issues!"</p>
       <h4>- Mark T., Gamer</h4>
-    </div>
-  </section>
-
-  <!-- Pricing Table Section -->
-  <section class="pricing-table">
-    <div class="pricing-card">
-      <h4>Basic Plan</h4>
-      <p>Perfect for small groups and personal projects.</p>
-      <div class="price">$5/month</div>
-      <button>Get Started</button>
-    </div>
-    <div class="pricing-card">
-      <h4>Standard Plan</h4>
-      <p>Ideal for medium-sized communities.</p>
-      <div class="price">$10/month</div>
-      <button>Get Started</button>
-    </div>
-    <div class="pricing-card">
-      <h4>Premium Plan</h4>
-      <p>For large servers with high traffic and custom needs.</p>
-      <div class="price">$20/month</div>
-      <button>Get Started</button>
     </div>
   </section>
 
@@ -308,5 +286,18 @@
       <a href="#" target="_blank">Instagram</a>
     </div>
   </footer>
+
+  <script>
+    // JavaScript for making the header move down on scroll
+    window.addEventListener('scroll', function() {
+      const header = document.getElementById('header');
+      if (window.scrollY > 50) {
+        header.style.top = `${window.scrollY - 50}px`;  // Adjust as needed
+      } else {
+        header.style.top = '0';
+      }
+    });
+  </script>
+
 </body>
 </html>
