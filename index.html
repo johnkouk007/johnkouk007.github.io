@@ -7,15 +7,14 @@
   <title>DVH Hosting - Reliable Game Hosting Solutions</title>
   
   <link rel="icon" href="https://cdn.discordapp.com/attachments/1302235245441191978/1305561098896015421/Screenshot_20241031-152812_Google.jpg?ex=67337a06&is=67322886&hm=d8c840bf590c0541e9966617189d4f182f5d985a645a2a3a547d2172c7dd547b&" type="image/x-icon">
-
+  
   <style>
     /* Global Styles */
     body {
       margin: 0;
       font-family: 'Arial', sans-serif;
-      background-color: #141414;
       color: #fff;
-      padding-top: 0;
+      background-color: #141414;
       overflow-x: hidden;
     }
     a {
@@ -23,70 +22,57 @@
       text-decoration: none;
     }
 
-    /* Background image with fade-out effect */
+    /* Background Image with Parallax */
     .background {
+      position: relative;
       background: url('https://cdn.discordapp.com/attachments/1302235245441191978/1305907434883256411/17314229785316591938452207152518.jpg?ex=6734bc93&is=67336b13&hm=882f0ba923dde9431902495da2f466f42c57dc9bb993bb8467f190d1383206bb&') no-repeat center center;
       background-size: cover;
       height: 100vh;
-      position: relative;
       z-index: -1;
+      background-attachment: fixed;
     }
     .fade-out {
       position: absolute;
       bottom: 0;
       width: 100%;
       height: 200px;
-      background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 100%);
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 100%);
+    }
+
+    /* Header Section with Background Image */
+    header {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+      padding: 20px;
+      background-color: rgba(0, 0, 0, 0.5);
       z-index: 1;
     }
 
-    /* Header Section */
-    header {
-      padding: 20px;
-      text-align: center;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      color: white;
-      position: sticky;
-      top: 0;
-      z-index: 2;
-      background-color: rgba(0, 0, 0, 0.7);
-      transition: top 0.3s ease-in-out;
-    }
-
-    /* Title and Logo Styling */
-    header a {
-      display: flex;
-      align-items: center;
-      text-decoration: none;
-      color: inherit;
-    }
-    header img {
-      height: 50px;
-      margin-right: 20px;
-    }
     header h1 {
-      font-size: 48px;
+      font-size: 60px;
       color: #00bcd4;
+      text-transform: uppercase;
       margin: 0;
+      text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
     }
 
     /* Navigation Buttons */
     .header-buttons {
-      display: flex;
-      justify-content: center;
+      margin-top: 20px;
     }
     .header-buttons button {
       background-color: #00bcd4;
       color: #fff;
-      padding: 10px 20px;
-      font-size: 16px;
+      padding: 15px 30px;
+      font-size: 18px;
       border: none;
       border-radius: 5px;
       cursor: pointer;
-      margin: 0 10px;
+      margin: 0 15px;
       text-transform: uppercase;
       transition: background-color 0.3s ease;
     }
@@ -98,13 +84,13 @@
     .main-content {
       padding: 60px 20px;
       text-align: center;
-      z-index: 2;
-      margin-top: 80px;  /* Offset for header height */
+      margin-top: 50px;
     }
+
     .main-content h2 {
-      font-size: 48px;
-      color: #fff;
+      font-size: 50px;
       margin-bottom: 20px;
+      color: #fff;
     }
     .main-content p {
       font-size: 18px;
@@ -113,11 +99,11 @@
       margin-bottom: 40px;
     }
 
-    .main-content .button-container {
+    .button-container {
       display: flex;
       justify-content: center;
     }
-    .main-content .faq-button {
+    .faq-button {
       background-color: #00bcd4;
       color: #fff;
       padding: 15px 30px;
@@ -129,7 +115,7 @@
       text-transform: uppercase;
       transition: background-color 0.3s ease;
     }
-    .main-content .faq-button:hover {
+    .faq-button:hover {
       background-color: #008c8c;
     }
 
@@ -140,7 +126,7 @@
       text-align: center;
     }
     .testimonials h3 {
-      font-size: 36px;
+      font-size: 40px;
       color: #00bcd4;
       margin-bottom: 40px;
     }
@@ -167,9 +153,9 @@
     }
     .pricing-card {
       background-color: #333;
-      padding: 20px;
+      padding: 30px;
       border-radius: 5px;
-      width: 250px;
+      width: 300px;
       text-align: center;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
     }
@@ -191,7 +177,7 @@
     .pricing-card button {
       background-color: #00bcd4;
       color: #fff;
-      padding: 10px 20px;
+      padding: 12px 25px;
       font-size: 16px;
       border: none;
       border-radius: 5px;
@@ -204,7 +190,7 @@
       background-color: #222;
     }
     .faq-section h3 {
-      font-size: 36px;
+      font-size: 40px;
       color: #00bcd4;
       margin-bottom: 20px;
       text-align: center;
@@ -217,6 +203,13 @@
       color: #fff;
       cursor: pointer;
       margin-bottom: 10px;
+      padding: 10px;
+      background-color: #333;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+    .faq-question:hover {
+      background-color: #00bcd4;
     }
     .faq-answer {
       font-size: 18px;
@@ -259,10 +252,7 @@
 
   <!-- Header Section with Logo, Title, and Buttons -->
   <header id="header">
-    <a href="/">
-      <img src="https://cdn.discordapp.com/attachments/1302235245441191978/1305561098896015421/Screenshot_20241031-152812_Google.jpg?ex=67337a06&is=67322886&hm=d8c840bf590c0541e9966617189d4f182f5d985a645a2a3a547d2172c7dd547b&" alt="DVH Hosting Logo">
-      <h1>DVH Hosting</h1>
-    </a>
+    <h1>DVH Hosting</h1>
     <div class="header-buttons">
       <a href="faq.html"><button class="faq-button">FAQ</button></a>
       <a href="#pricing"><button class="faq-button">Pricing</button></a>
@@ -319,6 +309,19 @@
     </div>
   </section>
 
+  <!-- FAQ Section -->
+  <section class="faq-section">
+    <h3>Frequently Asked Questions</h3>
+    <div class="faq-item">
+      <div class="faq-question">What is DVH Hosting?</div>
+      <div class="faq-answer">DVH Hosting is a premium provider of game server hosting, providing high performance and low latency.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">How do I get started?</div>
+      <div class="faq-answer">You can easily sign up and choose a plan through our pricing page.</div>
+    </div>
+  </section>
+
   <!-- Footer Section -->
   <footer>
     <p>&copy; 2024 DVH Hosting. All rights reserved.</p>
@@ -333,19 +336,6 @@
       <a href="#" target="_blank">Instagram</a>
     </div>
   </footer>
-
-  <!-- FAQ Section -->
-  <section class="faq-section">
-    <h3>Frequently Asked Questions</h3>
-    <div class="faq-item">
-      <div class="faq-question">What is DVH Hosting?</div>
-      <div class="faq-answer">DVH Hosting is a premium provider of game server hosting, providing high performance and low latency.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-question">How do I get started?</div>
-      <div class="faq-answer">You can easily sign up and choose a plan through our pricing page.</div>
-    </div>
-  </section>
 
   <script>
     // FAQ Toggle
