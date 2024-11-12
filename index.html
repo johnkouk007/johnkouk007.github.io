@@ -16,6 +16,7 @@
       background-color: #141414;
       color: #fff;
       padding-top: 0;
+      overflow-x: hidden;
     }
     a {
       color: inherit;
@@ -48,8 +49,10 @@
       justify-content: space-between;
       align-items: center;
       color: white;
-      position: relative;
+      position: sticky;
+      top: 0;
       z-index: 2;
+      background-color: rgba(0, 0, 0, 0.7);
       transition: top 0.3s ease-in-out;
     }
 
@@ -96,6 +99,7 @@
       padding: 60px 20px;
       text-align: center;
       z-index: 2;
+      margin-top: 80px;  /* Offset for header height */
     }
     .main-content h2 {
       font-size: 48px;
@@ -194,6 +198,33 @@
       cursor: pointer;
     }
 
+    /* FAQ Section */
+    .faq-section {
+      padding: 60px 20px;
+      background-color: #222;
+    }
+    .faq-section h3 {
+      font-size: 36px;
+      color: #00bcd4;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .faq-item {
+      margin-bottom: 15px;
+    }
+    .faq-question {
+      font-size: 20px;
+      color: #fff;
+      cursor: pointer;
+      margin-bottom: 10px;
+    }
+    .faq-answer {
+      font-size: 18px;
+      color: #ccc;
+      display: none;
+      margin-top: 10px;
+    }
+
     /* Footer Section */
     footer {
       background-color: #222;
@@ -229,25 +260,19 @@
   <!-- Header Section with Logo, Title, and Buttons -->
   <header id="header">
     <a href="/">
-      <img src="https://cdn.discordapp.com/attachments/1302235245441191978/1305561098896015421/Screenshot_20241031-152812_Google.jpg?ex=67337a06&is=67322886&hm=d8c840bf590c0541e9966617189d4f182f5d985a645a2a3a547d2172c7dd547b&" alt="DVH Hosting">
+      <img src="https://cdn.discordapp.com/attachments/1302235245441191978/1305561098896015421/Screenshot_20241031-152812_Google.jpg?ex=67337a06&is=67322886&hm=d8c840bf590c0541e9966617189d4f182f5d985a645a2a3a547d2172c7dd547b&" alt="DVH Hosting Logo">
       <h1>DVH Hosting</h1>
     </a>
     <div class="header-buttons">
-      <button>Home</button>
-      <button>Services</button>
-      <button>Pricing</button>
-      <button>About</button>
-      <button>Contact</button>
-      <button>Support</button>
+      <a href="faq.html"><button class="faq-button">FAQ</button></a>
+      <a href="#pricing"><button class="faq-button">Pricing</button></a>
     </div>
   </header>
 
   <!-- Main Content Section -->
   <section class="main-content">
     <h2>Reliable Game Hosting Solutions</h2>
-    <p>Welcome to DVH Hosting! We offer top-tier, reliable, and affordable hosting solutions for a variety of gaming servers. Whether you're starting a new server or upgrading your existing one, DVH Hosting provides the best performance, security, and support.</p>
-
-    <!-- FAQ Button -->
+    <p>Experience lag-free performance with high-quality game server hosting. Our services are trusted by hundreds of gamers worldwide.</p>
     <div class="button-container">
       <a href="faq.html">
         <button class="faq-button">FAQ</button>
@@ -272,6 +297,28 @@
     </div>
   </section>
 
+  <!-- Pricing Section -->
+  <section id="pricing" class="pricing-table">
+    <div class="pricing-card">
+      <h4>Basic Plan</h4>
+      <p>Perfect for small communities</p>
+      <div class="price">$9.99/month</div>
+      <button>Order Now</button>
+    </div>
+    <div class="pricing-card">
+      <h4>Premium Plan</h4>
+      <p>For serious gamers</p>
+      <div class="price">$19.99/month</div>
+      <button>Order Now</button>
+    </div>
+    <div class="pricing-card">
+      <h4>Ultimate Plan</h4>
+      <p>Maximum performance</p>
+      <div class="price">$29.99/month</div>
+      <button>Order Now</button>
+    </div>
+  </section>
+
   <!-- Footer Section -->
   <footer>
     <p>&copy; 2024 DVH Hosting. All rights reserved.</p>
@@ -287,15 +334,27 @@
     </div>
   </footer>
 
+  <!-- FAQ Section -->
+  <section class="faq-section">
+    <h3>Frequently Asked Questions</h3>
+    <div class="faq-item">
+      <div class="faq-question">What is DVH Hosting?</div>
+      <div class="faq-answer">DVH Hosting is a premium provider of game server hosting, providing high performance and low latency.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">How do I get started?</div>
+      <div class="faq-answer">You can easily sign up and choose a plan through our pricing page.</div>
+    </div>
+  </section>
+
   <script>
-    // JavaScript for making the header move down on scroll
-    window.addEventListener('scroll', function() {
-      const header = document.getElementById('header');
-      if (window.scrollY > 50) {
-        header.style.top = `${window.scrollY - 50}px`;  // Adjust as needed
-      } else {
-        header.style.top = '0';
-      }
+    // FAQ Toggle
+    const faqQuestions = document.querySelectorAll('.faq-question');
+    faqQuestions.forEach(question => {
+      question.addEventListener('click', () => {
+        const answer = question.nextElementSibling;
+        answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+      });
     });
   </script>
 
