@@ -22,15 +22,19 @@
     /* Header Section */
     header {
       background-color: #000;
-      padding: 15px;
-      text-align: center;
+      padding: 10px 15px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
     }
+    header .logo {
+      display: flex;
+      align-items: center;
+    }
     header img {
-      height: 40px; /* Smaller logo for mobile */
+      height: 40px;
+      margin-right: 10px;
     }
     header h1 {
       font-size: 24px;
@@ -38,7 +42,12 @@
       margin: 0;
     }
 
-    /* Navigation Buttons */
+    /* Header Buttons - Wrap on Small Screens */
+    .header-buttons {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
     .header-buttons button {
       background-color: #00bcd4;
       color: #fff;
@@ -47,28 +56,42 @@
       border: none;
       border-radius: 5px;
       cursor: pointer;
-      margin: 0 5px;
       transition: background-color 0.3s ease;
     }
     .header-buttons button:hover {
       background-color: #008c8c;
     }
 
+    /* Responsive Header for Small Screens */
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .header-buttons {
+        width: 100%;
+        justify-content: center;
+        padding-top: 10px;
+      }
+    }
+
     /* Hero Section */
     .hero {
-      background: linear-gradient(135deg, #00bcd4, #141414);
+      background: url('https://media.licdn.com/dms/image/v2/D4D12AQGWJP90fxppDA/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1698223360262?e=2147483647&v=beta&t=_hlUobi4U4ECZKUWuQSEbWb8rE-6rrvyufrxWVHuZtI') no-repeat center center;
+      background-size: cover;
       padding: 60px 20px;
       text-align: center;
-      animation: fadeIn 1s ease;
     }
     .hero h2 {
       font-size: 36px;
       color: #fff;
       margin: 0;
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
     }
     .hero p {
       font-size: 18px;
       margin: 15px 0;
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
     }
     .btn-primary {
       background-color: #00bcd4;
@@ -79,7 +102,6 @@
       border-radius: 5px;
       cursor: pointer;
       transition: background-color 0.3s ease;
-      animation: fadeInUp 1.2s ease;
     }
     .btn-primary:hover {
       background-color: #008c8c;
@@ -90,7 +112,6 @@
       background-color: #222;
       padding: 40px 10px;
       text-align: center;
-      animation: fadeIn 1.2s ease;
     }
     .services h2 {
       font-size: 30px;
@@ -105,7 +126,6 @@
       width: 90%;
       color: #fff;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-      animation: slideInUp 1.3s ease;
       transition: transform 0.3s ease;
     }
     .service-box:hover {
@@ -119,47 +139,6 @@
     .service-box p {
       color: #ccc;
       font-size: 14px;
-    }
-
-    /* Testimonials Section */
-    .testimonial-section {
-      padding: 40px 10px;
-      background-color: #141414;
-      text-align: center;
-      animation: fadeIn 1.3s ease;
-    }
-    .testimonial-section h2 {
-      font-size: 28px;
-      color: #fff;
-      margin-bottom: 20px;
-    }
-    .testimonial-item {
-      background-color: #222;
-      padding: 20px;
-      margin: 15px auto;
-      border-radius: 10px;
-      width: 90%;
-      color: #fff;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-      animation: slideInUp 1.3s ease;
-      transition: transform 0.3s ease;
-    }
-    .testimonial-item:hover {
-      transform: scale(1.05);
-    }
-    .testimonial-item img {
-      width: 60px;
-      border-radius: 50%;
-      margin-bottom: 10px;
-    }
-    .testimonial-rating .star {
-      font-size: 16px;
-      color: #00bcd4;
-    }
-    .testimonial-text {
-      color: #f2f2f2;
-      font-size: 14px;
-      line-height: 1.6;
     }
 
     /* Footer Section */
@@ -181,30 +160,21 @@
     footer .social-links a:hover {
       color: #00bcd4;
     }
-
-    /* Animations */
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes slideInUp {
-      from { transform: translateY(20px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
-    }
   </style>
 </head>
 <body>
 
   <!-- Header Section with Logo, Title, and Buttons -->
   <header>
-    <a href="/">
+    <div class="logo">
       <img src="https://cdn.discordapp.com/attachments/1302235245441191978/1305561098896015421/Screenshot_20241031-152812_Google.jpg" alt="DVH Hosting">
       <h1>DVH Hosting</h1>
-    </a>
+    </div>
+    <div class="header-buttons">
+      <button>Home</button>
+      <button>About</button>
+      <button>Contact</button>
+    </div>
   </header>
 
   <!-- Hero Section -->
@@ -234,29 +204,6 @@
     </div>
   </section>
 
-  <!-- Testimonials Section -->
-  <section id="testimonials" class="testimonial-section">
-    <h2>What Our Customers Say</h2>
-    <div class="testimonial-item">
-      <img src="https://via.placeholder.com/80" alt="Customer">
-      <h3>John Doe</h3>
-      <div class="testimonial-rating">
-        <span class="star">&#9733;</span><span class="star">&#9733;</span>
-        <span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span>
-      </div>
-      <p class="testimonial-text">"DVH Hosting has been amazing. The performance is top-notch!"</p>
-    </div>
-    <div class="testimonial-item">
-      <img src="https://via.placeholder.com/80" alt="Customer">
-      <h3>Jane Smith</h3>
-      <div class="testimonial-rating">
-        <span class="star">&#9733;</span><span class="star">&#9733;</span>
-        <span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span>
-      </div>
-      <p class="testimonial-text">"Reliable and affordable. I couldn’t ask for better hosting!"</p>
-    </div>
-  </section>
-
   <!-- Footer Section -->
   <footer>
     <p>DVH Hosting &copy; 2024</p>
@@ -269,4 +216,5 @@
 
 </body>
 </html>
+
 
