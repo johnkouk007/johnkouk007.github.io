@@ -3,16 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>DVH Hosting</title>
-  <link rel="icon" href="https://cdn.discordapp.com/attachments/1302235245441191978/1305561098896015421/Screenshot_20241031-152812_Google.jpg" type="image/x-icon">
+  
+  <!-- Favicon (Logo in browser tab) -->
+  <link rel="icon" href="https://cdn.discordapp.com/attachments/1302235245441191978/1305561098896015421/Screenshot_20241031-152812_Google.jpg?ex=67337a06&is=67322886&hm=d8c840bf590c0541e9966617189d4f182f5d985a645a2a3a547d2172c7dd547b&" type="image/x-icon">
 
   <style>
     /* Global Styles */
-    body {
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
       font-family: 'Arial', sans-serif;
       background-color: #141414;
       color: #fff;
+      overflow-x: hidden;
     }
     a {
       color: inherit;
@@ -22,86 +30,78 @@
     /* Header Section */
     header {
       background-color: #000;
-      padding: 10px 15px;
+      padding: 10px 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
       display: flex;
       justify-content: space-between;
       align-items: center;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
-    header .logo {
+    header a {
       display: flex;
       align-items: center;
     }
     header img {
-      height: 40px;
+      height: 50px;
       margin-right: 10px;
     }
     header h1 {
-      font-size: 24px;
+      font-size: 32px;
       color: #00bcd4;
-      margin: 0;
     }
 
-    /* Header Buttons - Wrap on Small Screens */
+    /* Navigation Buttons */
     .header-buttons {
       display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
     }
     .header-buttons button {
       background-color: #00bcd4;
       color: #fff;
-      padding: 8px 12px;
+      padding: 10px 15px;
       font-size: 14px;
       border: none;
       border-radius: 5px;
       cursor: pointer;
+      margin: 0 5px;
       transition: background-color 0.3s ease;
     }
     .header-buttons button:hover {
       background-color: #008c8c;
     }
 
-    /* Responsive Header for Small Screens */
-    @media (max-width: 600px) {
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      .header-buttons {
-        width: 100%;
-        justify-content: center;
-        padding-top: 10px;
-      }
-    }
-
-    /* Hero Section */
+    /* Hero Section with background image */
     .hero {
-      background: url('https://media.licdn.com/dms/image/v2/D4D12AQGWJP90fxppDA/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1698223360262?e=2147483647&v=beta&t=_hlUobi4U4ECZKUWuQSEbWb8rE-6rrvyufrxWVHuZtI') no-repeat center center;
-      background-size: cover;
-      padding: 60px 20px;
+      background: url('https://media.licdn.com/dms/image/v2/D4D12AQGWJP90fxppDA/article-cover_image-shrink_600_2000/0/1698223360262?e=2147483647&v=beta&t=_hlUobi4U4ECZKUWuQSEbWb8rE-6rrvyufrxWVHuZtI') no-repeat center center/cover;
+      padding: 100px 20px;
       text-align: center;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
     }
     .hero h2 {
-      font-size: 36px;
-      color: #fff;
-      margin: 0;
-      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+      font-size: 60px;
+      margin-bottom: 10px;
+      animation: fadeIn 1.5s ease;
     }
     .hero p {
-      font-size: 18px;
-      margin: 15px 0;
-      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+      font-size: 22px;
+      margin: 20px 0;
+      animation: fadeIn 2s ease;
     }
     .btn-primary {
       background-color: #00bcd4;
       color: #fff;
-      padding: 10px 20px;
+      padding: 15px 30px;
       font-size: 18px;
       border: none;
       border-radius: 5px;
       cursor: pointer;
       transition: background-color 0.3s ease;
+      animation: fadeIn 2.5s ease;
     }
     .btn-primary:hover {
       background-color: #008c8c;
@@ -110,22 +110,22 @@
     /* Services Section */
     .services {
       background-color: #222;
-      padding: 40px 10px;
+      padding: 60px 20px;
       text-align: center;
     }
     .services h2 {
-      font-size: 30px;
-      color: #fff;
-      margin-bottom: 20px;
+      font-size: 48px;
+      margin-bottom: 40px;
     }
     .service-box {
       background-color: #333;
-      padding: 20px;
-      margin: 15px auto;
+      padding: 30px;
+      margin: 10px;
       border-radius: 10px;
-      width: 90%;
-      color: #fff;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      display: inline-block;
+      width: 280px;
+      color: #fff;
       transition: transform 0.3s ease;
     }
     .service-box:hover {
@@ -133,32 +133,31 @@
     }
     .service-box h3 {
       color: #00bcd4;
-      font-size: 24px;
-      margin: 15px 0;
-    }
-    .service-box p {
-      color: #ccc;
-      font-size: 14px;
+      font-size: 28px;
+      margin-bottom: 15px;
     }
 
     /* Footer Section */
     footer {
       background-color: #222;
-      padding: 20px 10px;
+      padding: 20px;
       text-align: center;
-      color: #fff;
     }
     footer p {
-      font-size: 14px;
-      margin: 10px 0;
-    }
-    footer .social-links a {
-      margin: 0 5px;
       font-size: 16px;
-      transition: color 0.3s ease;
     }
-    footer .social-links a:hover {
-      color: #00bcd4;
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .hero h2 { font-size: 40px; }
+      .hero p { font-size: 18px; }
+      .header-buttons button { font-size: 12px; }
     }
   </style>
 </head>
@@ -166,14 +165,17 @@
 
   <!-- Header Section with Logo, Title, and Buttons -->
   <header>
-    <div class="logo">
-      <img src="https://cdn.discordapp.com/attachments/1302235245441191978/1305561098896015421/Screenshot_20241031-152812_Google.jpg" alt="DVH Hosting">
+    <a href="/">
+      <img src="https://cdn.discordapp.com/attachments/1302235245441191978/1305561098896015421/Screenshot_20241031-152812_Google.jpg?ex=67337a06&is=67322886&hm=d8c840bf590c0541e9966617189d4f182f5d985a645a2a3a547d2172c7dd547b&" alt="DVH Hosting">
       <h1>DVH Hosting</h1>
-    </div>
+    </a>
     <div class="header-buttons">
       <button>Home</button>
+      <button>Services</button>
+      <button>Pricing</button>
       <button>About</button>
       <button>Contact</button>
+      <button>Support</button>
     </div>
   </header>
 
@@ -189,32 +191,28 @@
     <h2>Our Hosting Plans</h2>
     <div class="service-box">
       <h3>Basic Plan</h3>
-      <p>Perfect for small gaming servers with up to 10 players.</p>
+      <p>Perfect for small gaming servers with up to 10 players. Enjoy seamless gameplay with our fast servers.</p>
       <button class="btn-primary">Choose Plan</button>
     </div>
     <div class="service-box">
       <h3>Advanced Plan</h3>
-      <p>For medium-sized servers with up to 50 players.</p>
+      <p>For medium-sized servers. Host up to 50 players with improved performance and premium support.</p>
       <button class="btn-primary">Choose Plan</button>
     </div>
     <div class="service-box">
       <h3>Ultimate Plan</h3>
-      <p>Host up to 100+ players with high uptime and support.</p>
+      <p>For large-scale servers. Host up to 100+ players with full customization, priority support, and high uptime.</p>
       <button class="btn-primary">Choose Plan</button>
     </div>
   </section>
 
   <!-- Footer Section -->
   <footer>
-    <p>DVH Hosting &copy; 2024</p>
-    <div class="social-links">
-      <a href="#"><i class="fab fa-twitter"></i></a>
-      <a href="#"><i class="fab fa-facebook"></i></a>
-      <a href="#"><i class="fab fa-instagram"></i></a>
-    </div>
+    <p>&copy; 2024 DVH Hosting. All rights reserved.</p>
   </footer>
 
 </body>
 </html>
+
 
 
