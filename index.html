@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>DVH Hosting</title>
-
+  <title>DVH Hosting - Reliable Game Hosting Solutions</title>
+  
   <!-- Favicon (Logo in browser tab) -->
   <link rel="icon" href="https://cdn.discordapp.com/attachments/1302235245441191978/1305561098896015421/Screenshot_20241031-152812_Google.jpg?ex=67337a06&is=67322886&hm=d8c840bf590c0541e9966617189d4f182f5d985a645a2a3a547d2172c7dd547b&" type="image/x-icon">
 
@@ -24,7 +24,8 @@
 
     /* Header Section */
     header {
-      background-color: #141414;
+      background: url('https://media.licdn.com/dms/image/v2/D4D12AQGWJP90fxppDA/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1698223360262?e=2147483647&v=beta&t=_hlUobi4U4ECZKUWuQSEbWb8rE-6rrvyufrxWVHuZtI') no-repeat center center;
+      background-size: cover;
       padding: 20px;
       text-align: center;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
@@ -32,6 +33,7 @@
       justify-content: space-between;
       align-items: center;
       color: white;
+      height: 350px;
     }
 
     /* Title and Logo Styling */
@@ -72,46 +74,66 @@
       background-color: #008c8c;
     }
 
-    /* Hero Section with Background Image */
-    .hero {
-      background: url('https://media.licdn.com/dms/image/v2/D4D12AQGWJP90fxppDA/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1698223360262?e=2147483647&v=beta&t=_hlUobi4U4ECZKUWuQSEbWb8rE-6rrvyufrxWVHuZtI') no-repeat center center;
-      background-size: cover;
-      padding: 120px 20px;
+    /* Main Content Section */
+    .main-content {
+      padding: 60px 20px;
       text-align: center;
-      color: #fff;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
     }
-    .hero h2 {
-      font-size: 60px;
+    .main-content h2 {
+      font-size: 48px;
       color: #fff;
-      margin: 0;
-      background-color: rgba(0, 0, 0, 0.5); /* Optional: Dark overlay behind text for better readability */
-      display: inline-block;
-      padding: 10px 20px;
-      border-radius: 5px;
+      margin-bottom: 20px;
     }
-    .hero p {
-      font-size: 22px;
-      margin: 20px 0;
-      color: #fff;
+    .main-content p {
+      font-size: 18px;
+      line-height: 1.6;
+      color: #ccc;
+      margin-bottom: 40px;
     }
-    .btn-primary {
+
+    .main-content .button-container {
+      display: flex;
+      justify-content: center;
+    }
+    .main-content .faq-button {
       background-color: #00bcd4;
       color: #fff;
       padding: 15px 30px;
-      font-size: 22px;
+      font-size: 18px;
       border: none;
       border-radius: 5px;
       cursor: pointer;
+      margin: 20px;
       text-transform: uppercase;
       transition: background-color 0.3s ease;
     }
-    .btn-primary:hover {
+    .main-content .faq-button:hover {
       background-color: #008c8c;
     }
 
-    /* Additional Sections and Footer styling omitted for brevity */
-
+    /* Footer Section */
+    footer {
+      background-color: #222;
+      padding: 40px 20px;
+      text-align: center;
+      color: #fff;
+    }
+    footer a {
+      color: #00bcd4;
+      text-decoration: none;
+    }
+    footer p {
+      font-size: 18px;
+      margin: 10px 0;
+    }
+    footer .social-links a {
+      margin: 0 10px;
+      font-size: 20px;
+      transition: color 0.3s ease;
+    }
+    footer .social-links a:hover {
+      color: #00bcd4;
+    }
   </style>
 </head>
 <body>
@@ -132,12 +154,28 @@
     </div>
   </header>
 
-  <!-- Hero Section with Background Image -->
-  <section class="hero">
+  <!-- Main Content Section -->
+  <section class="main-content">
     <h2>Reliable Game Hosting Solutions</h2>
-    <p>Fast, secure, and scalable hosting for your gaming needs. Join the DVH family today!</p>
-    <button class="btn-primary">Get Started</button>
+    <p>Welcome to DVH Hosting! We offer top-tier, reliable, and affordable hosting solutions for a variety of gaming servers. Whether you're starting a new server or upgrading your existing one, DVH Hosting provides the best performance, security, and support.</p>
+
+    <!-- FAQ Button -->
+    <div class="button-container">
+      <a href="faq.html">
+        <button class="faq-button">Frequently Asked Questions</button>
+      </a>
+    </div>
   </section>
+
+  <!-- Footer Section -->
+  <footer>
+    <p>&copy; 2024 DVH Hosting. All rights reserved.</p>
+    <div class="social-links">
+      <a href="#">Facebook</a>
+      <a href="#">Twitter</a>
+      <a href="#">Instagram</a>
+    </div>
+  </footer>
 
 </body>
 </html>
